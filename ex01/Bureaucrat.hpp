@@ -17,6 +17,8 @@
 #include <string>
 #include <exception>
 
+class Form; // Forward declaration
+
 class Bureaucrat
 {
 private:
@@ -26,9 +28,9 @@ private:
 public:
     /* Orthodox Canonical Form */
     Bureaucrat();
-    Bureaucrat(const std::string& name, int grade);
-    Bureaucrat(const Bureaucrat& other);
-    Bureaucrat& operator=(const Bureaucrat& other);
+    Bureaucrat(const std::string &name, int grade);
+    Bureaucrat(const Bureaucrat &other);
+    Bureaucrat &operator=(const Bureaucrat &other);
     ~Bureaucrat();
 
     /* Getters */
@@ -39,21 +41,23 @@ public:
     void incrementGrade();
     void decrementGrade();
 
+    void signForm(Form &form);
+
     /* Exceptions */
     class GradeTooHighException : public std::exception
     {
     public:
-        const char* what() const throw();
+        const char *what() const throw();
     };
 
     class GradeTooLowException : public std::exception
     {
     public:
-        const char* what() const throw();
+        const char *what() const throw();
     };
 };
 
 /* Operator overload */
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &b);
 
 #endif
