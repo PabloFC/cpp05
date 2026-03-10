@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: marvin <pafuente@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 12:23:36 by pafuente          #+#    #+#             */
-/*   Updated: 2026/03/05 12:23:37 by pafuente         ###   ########.fr       */
+/*   Updated: 2026/03/10 18:45:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
     : AForm("PresidentialPardon", 25, 5), _target(target) {}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
     if (!getIsSigned())
         throw FormNotSignedException();

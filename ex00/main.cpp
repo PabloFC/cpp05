@@ -9,10 +9,10 @@ int main()
     std::cout << "\n--- Valid creation ---" << std::endl;
     try
     {
-        Bureaucrat alice("Alice", 5);
-        Bureaucrat bob("Bob", 150);
-        std::cout << alice << std::endl;
-        std::cout << bob << std::endl;
+        Bureaucrat alicia("Alicia", 5);
+        Bureaucrat bobo("Bobo", 150);
+        std::cout << alicia << std::endl;
+        std::cout << bobo << std::endl;
     }
     catch (std::exception &e)
     {
@@ -45,14 +45,14 @@ int main()
     std::cout << "\n--- decrementGrade -> GradeTooLowException ---" << std::endl;
     try
     {
-        Bureaucrat dave("Dave", 149);
-        std::cout << dave << std::endl;
+        Bureaucrat david("David", 149);
+        std::cout << david << std::endl;
 
-        dave.decrementGrade(); // grade goes from 149 to 150
-        std::cout << dave << std::endl;
+        david.decrementGrade(); // grade goes from 149 to 150
+        std::cout << david << std::endl;
 
-        dave.decrementGrade();          // already at 150 -> exception
-        std::cout << dave << std::endl; // should not reach here
+        david.decrementGrade();          // already at 150 -> exception
+        std::cout << david << std::endl; // should not reach here
     }
     catch (std::exception &e)
     {
@@ -65,8 +65,8 @@ int main()
     std::cout << "\n--- Construction with grade 0 -> GradeTooHighException ---" << std::endl;
     try
     {
-        Bureaucrat eve("Eve", 0);      // exception in constructor
-        std::cout << eve << std::endl; // should not reach here
+        Bureaucrat eva("Eva", 0);      // exception in constructor
+        std::cout << eva << std::endl; // should not reach here
     }
     catch (std::exception &e)
     {
@@ -79,8 +79,8 @@ int main()
     std::cout << "\n--- Construction with grade 151 -> GradeTooLowException ---" << std::endl;
     try
     {
-        Bureaucrat frank("Frank", 151);  // exception in constructor
-        std::cout << frank << std::endl; // should not reach here
+        Bureaucrat fran("Fran", 151);   // exception in constructor
+        std::cout << fran << std::endl; // should not reach here
     }
     catch (std::exception &e)
     {

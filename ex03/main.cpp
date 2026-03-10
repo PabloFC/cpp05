@@ -7,9 +7,17 @@ int main()
     Bureaucrat boss("Boss", 1);
 
     AForm *f1 = intern.makeForm("shrubbery creation", "home");
-    AForm *f2 = intern.makeForm("robotomy request", "Bender");
-    AForm *f3 = intern.makeForm("presidential pardon", "Marvin");
-    AForm *f4 = intern.makeForm("unknown form", "test");
+    AForm *f2 = intern.makeForm("robotomy request", "Palomo");
+    AForm *f3 = intern.makeForm("presidential pardon", "Antonio");
+    AForm *f4 = NULL;
+    try
+    {
+        f4 = intern.makeForm("unknown form", "test");
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 
     if (f1)
     {
@@ -33,7 +41,11 @@ int main()
     }
 
     if (f4)
+    {
+        boss.signForm(*f4);
+        boss.executeForm(*f4);
         delete f4;
+    }
 
     return 0;
 }

@@ -33,6 +33,5 @@ AForm *Intern::makeForm(const std::string &name, const std::string &target)
         return new PresidentialPardonForm(target);
     }
 
-    std::cout << "Intern cannot create this form" << std::endl;
-    return NULL;
+    throw std::invalid_argument("Intern cannot create form '" + name + "': form does not exist");
 }

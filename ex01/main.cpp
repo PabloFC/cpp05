@@ -3,7 +3,7 @@
 
 int main()
 {
-    Bureaucrat a("Alice", 50);
+    Bureaucrat a("Alicia", 50);
     Form f("Contract", 40, 30);
 
     std::cout << a << std::endl;
@@ -11,7 +11,7 @@ int main()
 
     a.signForm(f);
 
-    Bureaucrat b("Bob", 30);
+    Bureaucrat b("Bobo", 30);
     b.signForm(f);
 
     std::cout << f << std::endl;

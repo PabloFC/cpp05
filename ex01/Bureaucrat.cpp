@@ -32,7 +32,7 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
     if (this != &other)
-        _grade = other._grade; // _name es const, no se puede reasignar
+        _grade = other._grade;
     return *this;
 }
 
